@@ -5,3 +5,74 @@ body  {
 input {
   color: black;
 }
+h2 {
+  position: relative;
+  top: -75px;
+  color: white;
+  text-align: center;
+  animation-duration: 400ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#button {
+  position: relative;
+  left: 600px;
+  top: 400px;
+}
+.input1 {
+  position: relative;
+  left: 385px;
+  top: 400px;
+}
+label {
+  position: relative;
+  left: 385px;
+  top: 400px;
+}
+#displayDiv {
+  text-align: center;
+  font-size: 60px;
+
+}
+p {
+  color: white;
+  text-shadow: 10px 5px 10px black;
+}
+
+@keyframes blink {
+  from {
+     opacity: 1;
+  }
+  to {
+     opacity: 0;
+  }
+}
+.cylon_eye {
+  background-color: red;
+  background-image: linear-gradient(to right,
+      rgba(0, 0, 0, .9) 25%,
+      rgba(0, 0, 0, .1) 50%,
+      rgba(0, 0, 0, .9) 75%);
+  color: white;
+  height: 100%;
+  width: 20%;
+
+  -webkit-animation: 4s linear 0s infinite alternate move_eye;
+          animation: 4s linear 0s infinite alternate move_eye;
+}
+.polling_message {
+  color: white;
+  float: left;
+  margin-right: 50%;
+}
+
+.view_port {
+  background-color: black;
+  height: 75px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 75px;
+}
+@-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+        @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
