@@ -1,28 +1,33 @@
-$(document).ready(function() {
-  $("#inputForm").submit(function(event){
-    event.preventDefault();
+$(document).ready(function(){
+  $("userForm").submit(function(event){
     debugger;
-  function count(index) {
-    for (var i = 0; i <= index; i++) {
-      numberArray.push(i);
-
-    var userInput = parseInt($("#inputNumber").val());
-    var numberArray = []
-    var result = count(userInput);
-  var switchedWords = numberArray.map(function(number){
-      if (number % 3 === 0) {
-        return "I'm sorry, Dave. I'm afraid I can't let you do that";
-      } else if (/1/.test(number)) {
-        return "Beep!";
-      } else if (/0/.test(number)) {
-        return "Boop!";
-      } else {
-        return "Whoops!";
+    event.preventDefualt();
+    var userNum = $("#userInput").val();
+    if (beepBoop(userNum).length > 50) {
+      $("#displayUl").text("That is a long number!")
+    } else {
+      beepBoop(userNum).forEach(function(each){
+        $("#displayUl").text(each)
+      })
+    }
+    function beepBoop(userNum) {
+      if (userNum >= 1) {
+        var returnArray = [];
+        var expression1 = /1/g;
+        var expression2 = /0/g;
+        for (var i = 1; i <=userNum; i++) {
+          var stringIndex = String(i);
+          if (!(i % 3)) {
+            returnArray.push("I'm sorry, Dave. I'm afraid I can't do that.")
+          } else if (expression1.test(stringIndex)) {
+            returnArray.push("Boop!");
+          } else if (expression2.test(stringIndex)) {
+            returnArray.push("Beep!");
+          } else {
+            returnArray.push(i);
+          }
+        }
       }
-    });
-    return switchedWords;
-    console.log(switchedWords)
-  }
-}
-})
+    }
+  })
 })
