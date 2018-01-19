@@ -29,7 +29,7 @@ $(document).ready(function(){
       $("#displayP").text("That is a long number!");
     } else {
       beepBoop(userNum).forEach(function(each) {
-        $("#displayP").text(each);
+        $("#displayP").append(each);
       })
     }
   })
