@@ -1,5 +1,5 @@
 # Beep-Boop
-_by Swanner_  
+_by Chris Swanner_  
 This exam project demonstrates usage of arrays and loops.
 ## Install
 ### Git instructions:
